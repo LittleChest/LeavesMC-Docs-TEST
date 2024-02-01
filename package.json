@@ -1,0 +1,24 @@
+{
+  "name": "docs",
+  "version": "0.0.1",
+  "description": "Documentation for all projects made by The LeavesMC team.",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "keywords": ["LeavesMC", "documentation", "leaves"],
+  "author": "LittleChest",
+  "license": "AGPL-3.0-or-later",
+  "devDependencies": {
+    "vitepress": "1.0.0-rc.40"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeavesMC/Docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LeavesMC/Docs/issues"
+  },
+  "homepage": "https://docs.leavesmc.top"
+}
