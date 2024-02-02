@@ -19,7 +19,6 @@ export default defineConfig({
   },
 
   themeConfig: {
-    logo: '/logo.svg',
     externalLinkIcon: true,
 
     socialLinks: [

@@ -6,6 +6,9 @@ hero:
   name: "LeavesMC"
   text: "文档"
   tagline: "LeavesMC 团队的所有项目文档。"
+  image:
+    src: /logo.svg
+    alt: LeavesMC
   actions:
     - theme: brand
       text: "开始阅读"

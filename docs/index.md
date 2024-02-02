@@ -6,6 +6,9 @@ hero:
   name: "LeavesMC"
   text: "Documentation"
   tagline: "Documentation for all projects made by The LeavesMC team."
+  image:
+    src: /logo.svg
+    alt: LeavesMC
   actions:
     - theme: brand
       text: Read
