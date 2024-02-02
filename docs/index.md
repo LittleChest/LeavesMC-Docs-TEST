@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Read
-      link: /Leaves/
+      link: /Leaves/getting-started
 
 features:
   - title: Leaves
@@ -19,7 +19,7 @@ features:
 <style>
   :root {
     --vp-home-hero-name-color: transparent;
-    --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #0f766e, #34d399);
+    --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #059669, #2dd4bf);
 
     --vp-c-green-1: #047857;
     --vp-c-green-2: #059669;

@@ -1,34 +1,26 @@
 import { defineConfig } from 'vitepress'
+import { en } from './en.mts'
+import { zh_Hans } from './zh_Hans.mts'
+import { search as zhHansSearch } from './zh_Hans.mts'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "LeavesMC Documentation",
-  description: "Documentation for all projects made by The LeavesMC team.",
+
   srcDir: "./docs",
   lastUpdated: true,
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  cleanUrls: true,
+
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
+
+  locales: {
+    root: { label: 'English', ...en },
+    zh_Hans: { label: '简体中文', ...zh_Hans }
+  },
+
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     logo: '/logo.svg',
     externalLinkIcon: true,
-
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Leaves', link: '/Leaves/' }
-    ],
-
-    footer: {
-      copyright: '© 2024 The LeavesMC Team'
-    },
-
-    sidebar: [
-      {
-        text: 'Leaves',
-        items: [
-          { text: 'Getting Started', link: '/Leaves/' }
-        ]
-      }
-    ],
 
     socialLinks: [
       { icon: 'discord', link: 'https://discord.gg/5hgtU72w33' },
@@ -36,7 +28,10 @@ export default defineConfig({
     ],
 
     search: {
-      provider: 'local'
+      provider: 'local',
+      options: {
+        locales: { ...zhHansSearch }
+      }
     }
   }
 })
