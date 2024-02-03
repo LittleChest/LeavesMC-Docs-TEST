@@ -7,7 +7,11 @@
     "build": "vitepress build",
     "preview": "vitepress preview"
   },
-  "keywords": ["LeavesMC", "documentation", "leaves"],
+  "keywords": [
+    "LeavesMC",
+    "documentation",
+    "leaves"
+  ],
   "author": "LittleChest",
   "license": "AGPL-3.0-or-later",
   "devDependencies": {
