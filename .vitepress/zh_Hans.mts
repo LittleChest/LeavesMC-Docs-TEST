@@ -78,9 +78,11 @@ function nav(): DefaultTheme.NavItem[] {
 function sidebarLeaves(): DefaultTheme.SidebarItem[] {
   return [
     {
-      text: "介绍",
       collapsed: false,
-      items: [{ text: "快速开始", link: "getting-started" }],
+      items: [
+        { text: "快速开始", link: "getting-started" },
+        { text: "配置文件", link: "configuration" }
+      ],
     },
   ];
 }
