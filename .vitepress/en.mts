@@ -27,8 +27,7 @@ function nav(): DefaultTheme.NavItem[] {
   return [
     {
       text: 'Home',
-      link: '/',
-      activeMatch: '/'
+      link: '/'
     },
     {
       text: 'Leaves',
@@ -36,8 +35,17 @@ function nav(): DefaultTheme.NavItem[] {
       activeMatch: '/Leaves/'
     },
     {
-      text: 'Main Site',
-      link: 'https://leavesmc.top/?ref=docs'
+      text: 'More',
+      items: [
+        {
+          text: 'Main Site',
+          link: 'https://leavesmc.top/?ref=docs'
+        },
+        {
+          text: 'Javadocs',
+          link: 'https://repo.leavesmc.top'
+        }
+      ]
     }
   ]
 }

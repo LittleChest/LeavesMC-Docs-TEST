@@ -28,7 +28,7 @@ export const zh_Hans = defineConfig({
     },
 
     outline: {
-      label: '页面导航'
+      label: '总览'
     },
 
     lastUpdated: {
@@ -52,8 +52,7 @@ function nav(): DefaultTheme.NavItem[] {
   return [
     {
       text: '主页',
-      link: '/zh_Hans/',
-      activeMatch: '/zh_Hans/'
+      link: '/zh_Hans/'
     },
     {
       text: 'Leaves',
@@ -61,8 +60,17 @@ function nav(): DefaultTheme.NavItem[] {
       activeMatch: '/Leaves/'
     },
     {
-      text: '主站',
-      link: 'https://leavesmc.top/?ref=docs'
+      text: '更多',
+      items: [
+        {
+          text: '主站',
+          link: 'https://leavesmc.top/?ref=docs'
+        },
+        {
+          text: 'Javadocs',
+          link: 'https://repo.leavesmc.top'
+        }
+      ]
     }
   ]
 }
@@ -73,7 +81,7 @@ function sidebarLeaves(): DefaultTheme.SidebarItem[] {
       text: '介绍',
       collapsed: false,
       items: [
-        { text: '入门', link: 'getting-started' }
+        { text: '快速开始', link: 'getting-started' }
       ]
     }
   ]
