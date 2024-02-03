@@ -25,5 +25,9 @@
   "bugs": {
     "url": "https://github.com/LeavesMC/Docs/issues"
   },
-  "homepage": "https://docs.leavesmc.top"
+  "homepage": "https://docs.leavesmc.top",
+  "dependencies": {
+    "@types/node": "^20.11.16",
+    "yaml": "^2.3.4"
+  }
 }
