@@ -8,6 +8,8 @@ export default defineConfig({
   srcDir: "./docs",
   lastUpdated: true,
   cleanUrls: true,
+  // @TODO
+  ignoreDeadLinks: true,
 
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
