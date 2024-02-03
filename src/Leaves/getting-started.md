@@ -21,17 +21,5 @@ For more advanced Java tuning, see [Aikar's Flags](https://docs.papermc.io/paper
 Use [Startup Script Generator](https://docs.papermc.io/misc/tools/start-script-gen) to generate a startup script for
 your server.
 
-To configure your server, see [Leaves Configuration](../configuration.md)
+To configure your server, see [Leaves Configuration](../configuration)
 and [Paper Configuration](https://docs.papermc.io/paper/reference/configuration).
-
-## Migrating to Leaves
-
-### From Vanilla
-
-Like Paper, migrating from Vanilla is easy, but there are some differences.
-
-Leaves will handle this conversion for you automatically. No additional consideration is required.
-
-### From CraftBukkit, Spigot or Paper
-
-Leaves is a drop in replacement for all CraftBukkit, Spigot and Paper, you don't need to make any changes.

@@ -19,17 +19,5 @@
 
 还可以使用[启动脚本生成器](https://docs.papermc.io/misc/tools/start-script-gen)为你的服务器生成启动脚本。
 
-要配置服务端，请查看 [Leaves 配置](../configuration.md)
+要配置服务端，请查看 [Leaves 配置](../configuration)
 和 [Paper 配置](https://docs.papermc.io/paper/reference/configuration)。
-
-## 迁移至 Leaves
-
-### 从原版迁移
-
-与 Paper 一样，从原版迁移非常容易。
-
-Leaves 将自动转换，无需额外操作。
-
-### 从 CraftBukkit、Spigot 或 Paper 迁移
-
-Leaves 可直接替代 CraftBukkit、Spigot 或 Paper，无需任何改动。

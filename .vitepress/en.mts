@@ -53,9 +53,14 @@ function nav(): DefaultTheme.NavItem[] {
 function sidebarLeaves(): DefaultTheme.SidebarItem[] {
   return [
     {
-      text: "Introduction",
+      text: "Getting Started",
+      link: "getting-started",
+    },
+    {
+      text: "Guides",
       collapsed: false,
-      items: [{ text: "Getting Started", link: "getting-started" }],
+      base: "/Leaves/guides/",
+      items: [{ text: "Migrating to or from Leaves", link: "migration" }],
     },
   ];
 }
