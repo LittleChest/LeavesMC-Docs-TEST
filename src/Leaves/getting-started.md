@@ -3,7 +3,7 @@
 ## Requirements
 
 | Leaves Version | Recommended Java Version |
-|----------------|--------------------------|
+| -------------- | ------------------------ |
 | 1.17.1+        | Java 21                  |
 
 ## Running The Server
