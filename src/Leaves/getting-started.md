@@ -6,6 +6,13 @@
 | -------------- | ------------------------ |
 | 1.17.1+        | Java 21                  |
 
+## Downloading Leaves
+
+LeavesMC provides runnable server jars directly from our
+[website's downloads page](https://leavesmc.top/downloads/leaves).
+
+Click on the build number to download a file.
+
 ## Running The Server
 
 To run the server, simply start it up like any other Java application.
