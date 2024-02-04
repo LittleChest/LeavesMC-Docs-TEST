@@ -1,0 +1,23 @@
+config-version:
+  default: 5
+  description: >-
+    Leaves配置文件版本
+settings:
+  protocol:
+    bladeren:
+      protocol:
+        default: false
+        description: >-
+          Bladeren 协议的主开关。
+      mspt-sync-protocol:
+        default: false
+        description: >-
+          是否启用对 Bladeren 中的 mspt 信息同步的支持。
+      mspt-sync-tick-interval:
+        default: 20
+        description: >-
+          mspt 信息同步的频率，单位为tick。
+      inline-block:
+        type: info
+        title: 备注
+        content: Blareden 按照正常来说并不会出现同步不及时的问题。如果你遇到了这种症状，那么尝试检查客户端侧的 mod 是否会导致这种问题。

@@ -4,6 +4,6 @@ import * as fs from "fs";
 // noinspection JSUnusedGlobalSymbols
 export default {
     load() {
-        return parse(fs.readFileSync('./docs/config-spec/leaves/en_US.yml', 'utf-8'))
+        return parse(fs.readFileSync('./src/config-spec/leaves/en_US.yml', 'utf-8'))
     }
 }

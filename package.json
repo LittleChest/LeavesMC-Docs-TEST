@@ -15,12 +15,13 @@
   "author": "LittleChest",
   "license": "AGPL-3.0-or-later",
   "dependencies": {
-    "@types/node": "^20.11.16",
-    "yaml": "^2.3.4"
+    "yaml": "^2.3.4",
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "prettier": "3.2.4",
-    "vitepress": "1.0.0-rc.40"
+    "vitepress": "1.0.0-rc.40",
+    "@types/node": "^20.11.16"
   },
   "repository": {
     "type": "git",
