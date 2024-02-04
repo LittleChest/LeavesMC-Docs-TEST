@@ -93,10 +93,10 @@ case for you, replace `world` with your `level-name` for all steps below.
 6. Replace your Leaves jar with a Vanilla server jar.
 7. Start your Vanilla server.
 
-### To CraftBukkit or Spigot
+### To CraftBukkit, Spigot or Paper
 
-Leaves does **not** support migration to either CraftBukkit or Spigot! While you may find success
-(both CraftBukkit and Spigot use the same directory structure as Leaves), **do not** reach out for
+Leaves does **not** support migration to each CraftBukkit, Spigot or Paper! While you may find success
+(all CraftBukkit, Spigot and Paper use the same directory structure as Leaves), **do not** reach out for
 support with issues you encounter and note that data loss is possible.
 
 ### To Fabric/Forge

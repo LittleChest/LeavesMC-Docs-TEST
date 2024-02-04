@@ -81,7 +81,12 @@ function sidebarLeaves(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: "快速开始", link: "getting-started" },
-        { text: "配置", link: "configuration" },
+        {
+          text: "指南",
+          collapsed: false,
+          base: "/zh_Hans/Leaves/guides/",
+          items: [{ text: "迁移", link: "migration" }],
+        },
       ],
     },
   ];
