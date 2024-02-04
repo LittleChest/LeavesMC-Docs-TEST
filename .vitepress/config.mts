@@ -1,9 +1,8 @@
-import { defineConfig } from "vitepress";
-import { en } from "./en.mts";
-import { zh_Hans } from "./zh_Hans.mts";
-import { search as zhHansSearch } from "./zh_Hans.mts";
+import { defineConfigWithTheme } from "vitepress";
+import { en } from "./en";
+import { zh_Hans, search as zhHansSearch } from "./zh_Hans";
 
-export default defineConfig({
+export default defineConfigWithTheme({
   srcDir: "./src",
   lastUpdated: true,
   cleanUrls: true,
@@ -14,7 +13,7 @@ export default defineConfig({
 
   locales: {
     root: { label: "English", ...en },
-    zh_Hans: { label: "简体中文", ...zh_Hans },
+    zh_Hans: { label: "简体中文", ...zh_Hans }
   },
 
   themeConfig: {
@@ -22,14 +21,14 @@ export default defineConfig({
 
     socialLinks: [
       { icon: "discord", link: "https://discord.gg/5hgtU72w33" },
-      { icon: "github", link: "https://github.com/Leaves" },
+      { icon: "github", link: "https://github.com/Leaves" }
     ],
 
     search: {
       provider: "local",
       options: {
-        locales: { ...zhHansSearch },
-      },
-    },
-  },
+        locales: { ...zhHansSearch }
+      }
+    }
+  }
 });
