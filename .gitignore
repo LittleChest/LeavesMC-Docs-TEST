@@ -4,13 +4,12 @@
 # pnpm
 pnpm-lock.yaml
 
+# Yarn
+yarn.lock
+
 # VitePress
 /.vitepress/cache
 /.vitepress/dist
-
-.idea
-
-yarn.lock
 
 # IDEA
 /.idea

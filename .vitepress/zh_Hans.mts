@@ -81,7 +81,7 @@ function sidebarLeaves(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: "快速开始", link: "getting-started" },
-        { text: "配置文件", link: "configuration" }
+        { text: "配置", link: "configuration" },
       ],
     },
   ];
