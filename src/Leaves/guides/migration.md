@@ -76,7 +76,7 @@ Here is a chart to show the difference between how Vanilla and Leaves store worl
 
 Follow these steps to migrate from Leaves to Vanilla:
 
-:::note
+::: warning
 
 These steps assume a `level-name` (as set in `server.properties`) of `world`. If this is not the
 case for you, replace `world` with your `level-name` for all steps below.

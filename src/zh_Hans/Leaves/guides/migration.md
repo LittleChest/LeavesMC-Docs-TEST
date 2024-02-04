@@ -70,7 +70,7 @@ Leaves 保留了与所有 Paper 插件的完全兼容性，实现无缝过渡。
 
 请按照以下步骤从 Leaves 迁移到原版：
 
-::: note
+::: warning
 
 这些步骤假定 `level-name`（在 `server.properties` 中设置）为 `world`。
 如果不是这种情况，请在以下所有步骤中将 `world` 替换为你的 `level-name`。
