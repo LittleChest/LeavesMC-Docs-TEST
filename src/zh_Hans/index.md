@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: "开始阅读"
-      link: /zh_Hans/Leaves/getting-started
+      link: /zh_Hans/Leaves/guide/getting-started
 
 features:
   - title: Leaves

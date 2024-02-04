@@ -9,58 +9,63 @@ export const en = defineConfig({
     nav: nav(),
 
     sidebar: {
-      "/Leaves/": { base: "/Leaves/", items: sidebarLeaves() },
+      "/Leaves/": { base: "/Leaves/", items: sidebarLeaves() }
     },
 
     editLink: {
-      pattern: "https://github.com/LeavesMC/Document/edit/main/docs/:path",
+      pattern: "https://github.com/LeavesMC/Document/edit/main/docs/:path"
     },
 
     footer: {
       message: "All documents are licensed under CC BY-SA 4.0",
-      copyright: "© 2024 The LeavesMC Team",
-    },
-  },
+      copyright: "© 2024 The LeavesMC Team"
+    }
+  }
 });
 
 function nav(): DefaultTheme.NavItem[] {
   return [
     {
       text: "Home",
-      link: "/",
+      link: "/"
     },
     {
       text: "Leaves",
-      link: "/Leaves/getting-started",
-      activeMatch: "/Leaves/",
+      link: "/Leaves/guide/getting-started",
+      activeMatch: "/Leaves/"
     },
     {
       text: "More",
       items: [
         {
           text: "Main Site",
-          link: "https://leavesmc.top/?ref=docs",
+          link: "https://leavesmc.top/?ref=docs"
         },
         {
           text: "Javadocs",
-          link: "https://repo.leavesmc.top",
-        },
-      ],
-    },
+          link: "https://repo.leavesmc.top"
+        }
+      ]
+    }
   ];
 }
 
 function sidebarLeaves(): DefaultTheme.SidebarItem[] {
   return [
     {
-      text: "Getting Started",
-      link: "getting-started",
-    },
-    {
       text: "Guides",
       collapsed: false,
       base: "/Leaves/guides/",
-      items: [{ text: "Migrating to or from Leaves", link: "migration" }],
-    },
+      items: [
+        {
+          text: "Getting Started",
+          link: "getting-started"
+        },
+        {
+          text: "Migrating to or from Leaves",
+          link: "migration"
+        }
+      ]
+    }
   ];
 }
