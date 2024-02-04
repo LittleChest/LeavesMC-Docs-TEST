@@ -9,6 +9,7 @@
   --vp-c-brand-3: var(--vp-c-green-3);
   --vp-c-brand-soft: var(--vp-c-green-soft);
 }
+
 .dark {
   --vp-c-green-1: #34d399;
   --vp-c-green-2: #10b981;
