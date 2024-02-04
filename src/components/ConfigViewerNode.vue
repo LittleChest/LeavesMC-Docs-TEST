@@ -2,6 +2,7 @@
 import { ref } from "vue";
 
 let hover = ref({});
+let expand = ref(false);
 
 const props = defineProps({
   data: Object
@@ -27,7 +28,7 @@ const props = defineProps({
       <div
         v-else
         :class="{ 'hover-without-child': hover[key] }"
-        style="border-radius: 4px; padding: 0 4px 0 4px;white-space: normal"
+        style="border-radius: 4px; padding: 0 4px 0 4px; white-space: normal"
       >
         <span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">{{ key }}</span><span
         style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">:</span> <span
@@ -39,7 +40,9 @@ const props = defineProps({
       :class="value.type + ` custom-block`"
       style="margin-right: 16px"
     >
-      <p class="custom-block-title">{{ value.title === undefined ? value.type.toUpperCase() : value.title }}</p>
+      <p class="custom-block-title">
+        {{ value.title === undefined ? value.type.toUpperCase() : value.title }}
+      </p>
       <p style="white-space: normal">{{ value.content }}</p>
     </div>
   </div>

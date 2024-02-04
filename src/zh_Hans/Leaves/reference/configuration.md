@@ -2,8 +2,8 @@
 
 <!--suppress HtmlUnknownAttribute -->
 <script setup>
-import ConfigViewer from "../../compoments/ConfigViewer.vue";
-import { data } from '../../config-spec/leaves/zhHans.data.ts';
+import ConfigViewer from "/components/ConfigViewer.vue";
+import { data } from '/config-spec/leaves/zhHans.data.ts';
 </script>
 
 <!--suppress VueMissingComponentImportInspection -->
