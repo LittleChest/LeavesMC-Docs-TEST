@@ -1,10 +1,10 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 
 let hover = ref({});
 
 const props = defineProps({
-  data: Object,
+  data: Object
 });
 </script>
 
@@ -19,7 +19,8 @@ const props = defineProps({
         <span
           :class="{ 'hover-with-child': hover[key] }"
           style="border-radius: 4px; padding: 0 4px 0 4px"
-          >{{ key }}:</span
+        ><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">{{ key }}</span><span
+          style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">:</span></span
         >
         <ConfigViewerNode :data="value" />
       </div>
@@ -28,7 +29,9 @@ const props = defineProps({
         :class="{ 'hover-without-child': hover[key] }"
         style="border-radius: 4px; padding: 0 4px 0 4px;white-space: normal"
       >
-        {{ key }}: {{ value.default }}
+        <span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">{{ key }}</span><span
+        style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">:</span> <span
+        style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">{{ value.default }}</span>
       </div>
     </div>
     <div
@@ -37,7 +40,7 @@ const props = defineProps({
       style="margin-right: 16px"
     >
       <p class="custom-block-title">{{ value.title === undefined ? value.type.toUpperCase() : value.title }}</p>
-      <p style="white-space: normal">{{value.content}}</p>
+      <p style="white-space: normal">{{ value.content }}</p>
     </div>
   </div>
 </template>
