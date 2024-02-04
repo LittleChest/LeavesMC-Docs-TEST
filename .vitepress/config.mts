@@ -1,8 +1,8 @@
-import { defineConfig } from "vitepress";
+import { defineConfigWithTheme } from "vitepress";
 import { en } from "./en";
 import { zh_Hans, search as zhHansSearch } from "./zh_Hans";
 
-export default defineConfig({
+export default defineConfigWithTheme({
   srcDir: "./src",
   lastUpdated: true,
   cleanUrls: true,
