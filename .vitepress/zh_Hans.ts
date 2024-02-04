@@ -94,7 +94,6 @@ function sidebarLeaves(): DefaultTheme.SidebarItem[] {
           collapsed: false,
           base: "/zh_Hans/Leaves/reference/",
           items: [
-          //  { text: "配置", link: "configuration" },
             { text: "假人", link: "fakeplayer" }
           ]
         }
