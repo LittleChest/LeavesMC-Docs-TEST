@@ -39,7 +39,7 @@ function isSpecial(value: string): boolean {
           <span class="config-value-text">: </span>
           <span :class="isSpecial(value.default)?'config-value-special':'config-value-text'">{{ value.default }}</span>
         </span>
-        <div v-if="expand[key]" class="custom-block info inline-block" style="width: 100%">
+        <div v-if="expand[key]" class="custom-block info inline-block" style="width: 100%; padding: 16px">
           {{ value.description }}
         </div>
       </div>
