@@ -12,10 +12,10 @@ const props = defineProps({
     <span class="lang">{{ name }}</span>
     <pre
       class="shiki shiki-themes github-light github-dark vp-code"
-    ><code style="color: var(--vp-c-brand)"><ConfigViewerNode
-        :data="data" :padding="false"/></code>
-    </pre>
+    ><code><ConfigViewerNode
+      :data="data" :padding="false" /></code></pre>
   </div>
 </template>
 
-<style scoped></style>
+<style module>
+</style>

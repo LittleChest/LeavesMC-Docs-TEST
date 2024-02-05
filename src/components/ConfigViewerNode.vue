@@ -8,6 +8,14 @@ const props = defineProps({
   data: Object,
   padding: Boolean
 });
+
+function isSpecial(value: string): boolean {
+  if (value == "true" || value == "false") {
+    return true;
+  }
+  return !isNaN(Number(value));
+
+}
 </script>
 
 <template>
@@ -16,29 +24,31 @@ const props = defineProps({
       v-if="key !== 'inline-block'"
       @mouseover="hover[key] = true"
       @mouseleave="hover[key] = false"
-      :style="{paddingLeft: padding ? '8px' : '0'}"
+      :style="{ paddingLeft: padding ? '8px' : '0' }"
     >
       <div v-if="value['default'] === undefined">
-        <span>
-          <span :class="hover[key] ? 'key-text-hover' : 'key-text'">{{ key }}</span>
-          <span :class="hover[key] ? 'key-text-hover' : 'key-text'">:</span>
+        <span class="line config-line" role="button">
+          <span :class="hover[key] ? 'config-key-text-hover' : 'config-key-text'">{{ key }}</span>
+          <span class="config-value-text">:</span>
         </span>
-        <ConfigViewerNode :data="value" :padding="true"/>
+        <ConfigViewerNode :data="value" :padding="true" />
       </div>
-      <div
-        v-else
-        style="white-space: normal"
-        @click="expand[key] = !expand[key]"
-      >
-        <span :class="hover[key] ? 'key-text-hover' : 'key-text'">{{ key }}</span>
-        <span class="value-text">: </span>
-        <span class="value-text">{{ value.default }}</span>
-        <div v-if="expand[key]" class="custom-block info" style="width: 100%">
-          {{value.description}}
+      <div v-else style="white-space: normal" @click="expand[key] = !expand[key]">
+        <span class="line config-line" role="button">
+          <span :class="hover[key] ? 'config-key-text-hover' : 'config-key-text'">{{ key }}</span>
+          <span class="config-value-text">: </span>
+          <span :class="isSpecial(value.default)?'config-value-special':'config-value-text'">{{ value.default }}</span>
+        </span>
+        <div v-if="expand[key]" class="custom-block info inline-block" style="width: 100%">
+          {{ value.description }}
         </div>
       </div>
     </div>
-    <div v-else :class="value.type + ` custom-block`" style="margin-right: 16px;width: 100%">
+    <div
+      v-else
+      :class="value.type + ` custom-block inline-block`"
+      style="margin-right: 16px; width: 100%"
+    >
       <p class="custom-block-title">
         {{ value.title === undefined ? value.type.toUpperCase() : value.title }}
       </p>
@@ -47,21 +57,37 @@ const props = defineProps({
   </div>
 </template>
 
-<style scoped>
-.key-text {
+<style>
+.config-key-text {
   --shiki-light: #22863a;
   --shiki-dark: #85e89d;
-  transition: all 0.5s;
 }
 
-.key-text-hover {
-  --shiki-light: #003eb3;
-  --shiki-dark: #69b1ff;
-  transition: all 0.5s;
+.config-key-text-hover {
+  --shiki-light: #6F42C1;
+  --shiki-dark: #B392F0;
 }
 
-.value-text {
-  --shiki-light: #032f62;
-  --shiki-dark: #9ecbff;
+.config-value-text {
+  --shiki-light: #032F62;
+  --shiki-dark: #9ECBFF;
+}
+
+.config-value-special {
+  --shiki-light: #005CC5;
+  --shiki-dark: #79B8FF;
+}
+
+.inline-block {
+  font-family: var(--vp-font-family-base);
+}
+
+.config-line {
+  display: inline-block;
+  padding: 0;
+  text-indent: -1rem;
+  margin-left: 1rem;
+
+  transition: all 0.5s;
 }
 </style>
