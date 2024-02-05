@@ -2,10 +2,11 @@
 import { ref } from "vue";
 
 let hover = ref({});
-let expand = ref(false);
+let expand = ref({});
 
 const props = defineProps({
-  data: Object
+  data: Object,
+  padding: Boolean
 });
 </script>
 
@@ -15,21 +16,29 @@ const props = defineProps({
       v-if="key !== 'inline-block'"
       @mouseover="hover[key] = true"
       @mouseleave="hover[key] = false"
+      :style="{paddingLeft: padding ? '8px' : '0'}"
     >
       <div v-if="value['default'] === undefined">
-        <span style="padding: 0 4px 0 4px">
-          <span :class="hover[key]?'key-text-hover':'key-text'">{{ key }}</span>
-          <span :class="hover[key]?'key-text-hover':'key-text'">:</span>
+        <span>
+          <span :class="hover[key] ? 'key-text-hover' : 'key-text'">{{ key }}</span>
+          <span :class="hover[key] ? 'key-text-hover' : 'key-text'">:</span>
         </span>
-        <ConfigViewerNode :data="value" />
+        <ConfigViewerNode :data="value" :padding="true"/>
       </div>
-      <div v-else style="border-radius: 4px; padding: 0 4px 0 4px; white-space: normal">
-        <span :class="hover[key]?'key-text-hover':'key-text'">{{ key }}</span>
+      <div
+        v-else
+        style="white-space: normal"
+        @click="expand[key] = !expand[key]"
+      >
+        <span :class="hover[key] ? 'key-text-hover' : 'key-text'">{{ key }}</span>
         <span class="value-text">: </span>
         <span class="value-text">{{ value.default }}</span>
+        <div v-if="expand[key]" class="custom-block info" style="width: 100%">
+          {{value.description}}
+        </div>
       </div>
     </div>
-    <div v-else :class="value.type + ` custom-block`" style="margin-right: 16px">
+    <div v-else :class="value.type + ` custom-block`" style="margin-right: 16px;width: 100%">
       <p class="custom-block-title">
         {{ value.title === undefined ? value.type.toUpperCase() : value.title }}
       </p>
@@ -39,7 +48,6 @@ const props = defineProps({
 </template>
 
 <style scoped>
-
 .key-text {
   --shiki-light: #22863a;
   --shiki-dark: #85e89d;
