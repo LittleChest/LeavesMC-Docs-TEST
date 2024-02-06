@@ -56,7 +56,7 @@ function nav(): DefaultTheme.NavItem[] {
     },
     {
       text: "Leaves",
-      link: "/zh_Hans/Leaves/guide/getting-started",
+      link: "/zh_Hans/Leaves/guides/getting-started",
       activeMatch: "/Leaves/"
     },
     {

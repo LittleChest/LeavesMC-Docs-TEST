@@ -2,7 +2,7 @@
 
 It's simple to migrate your server to or from Leaves. The steps below will help you get started.
 
-::: danger Backup your data before you start!
+::: danger
 
 Before you begin, please ensure you have a full backup of your server.
 
