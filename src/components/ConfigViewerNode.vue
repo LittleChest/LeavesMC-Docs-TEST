@@ -14,7 +14,6 @@ function isSpecial(value: string): boolean {
     return true;
   }
   return !isNaN(Number(value));
-
 }
 </script>
 
@@ -40,9 +39,8 @@ function isSpecial(value: string): boolean {
           <span :class="isSpecial(value.default)?'config-value-special':'config-value-text'">{{ value.default }}</span>
         </span>
         <div v-if="expand[key]" class="custom-block info inline-block"
-             style="width: 100%; padding: 16px; white-space: pre-line">
-          {{ value.description }}
-        </div>
+             style="width: 100%; padding: 16px; white-space: normal"
+             v-html="value.description" />
       </div>
     </div>
     <div
@@ -53,7 +51,7 @@ function isSpecial(value: string): boolean {
       <p class="custom-block-title">
         {{ value.title === undefined ? value.type.toUpperCase() : value.title }}
       </p>
-      <p style="white-space: pre-line">{{ value.content }}</p>
+      <p style="white-space: normal" v-html="value.content" />
     </div>
   </div>
 </template>
