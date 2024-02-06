@@ -32,20 +32,15 @@ settings:
       default: "OPS"
       description: "决定哪些玩家将会被 PCA 数据同步。
 
-
-        NOBODY - 所有玩家的数据都无法被同步。
-
-
-        BOT - 只有假人的数据可以被同步。
-
-
-        OPS - 假人的数据可以被同步，OP 可以同步所有玩家的数据。
-
-
-        OPS_AND_SELF - 假人的数据可以被同步，OP 可以同步所有玩家的数据，玩家可以同步自己的数据。
-
-
-        EVERYONE - 所有的玩家数据都可以被同步。"
+        - NOBODY - 所有玩家的数据都无法被同步。
+        
+        - BOT - 只有假人的数据可以被同步。
+        
+        - OPS - 假人的数据可以被同步，OP 可以同步所有玩家的数据。
+        
+        - OPS_AND_SELF - 假人的数据可以被同步，OP 可以同步所有玩家的数据，玩家可以同步自己的数据。
+        
+        - EVERYONE - 所有的玩家数据都可以被同步。"
     bbor-protocol:
       default: "false"
       description: "是否开启 BBOR 支持。"
