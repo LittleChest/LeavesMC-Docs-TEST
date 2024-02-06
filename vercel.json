@@ -1,6 +1,6 @@
 {
   "buildCommand": "vitepress build",
-  "cleanUrls": true
+  "cleanUrls": true,
   "devCommand": "vitepress dev",
   "framework": "vitepress",
   "headers": [
