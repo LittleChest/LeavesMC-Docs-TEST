@@ -65,23 +65,23 @@ function dynamicValue(value: string): string {
         <ConfigViewerNode :data="value" :padding="true" />
       </div>
       <div v-else style="white-space: pre-wrap" @click="expand[key] = !expand[key]">
-        <div class="line config-line" role="button">
+        <span class="line config-line" role="button">
           <span :class="hover[key] ? 'config-key-text-hover' : 'config-key-text'">{{ key }}</span>
           <span class="config-value-text">: </span>
-          <div
-            v-if="typeof value.default=='object'"
-            v-for="v in value.default" :key="key" style="padding-left: 16px">
+          <span
+            v-if="typeof value.default!='object'"
+            :class="isSpecial(resolveValue(value)) ? 'config-value-special' : 'config-value-text'"
+          >{{ resolveValue(value) }}</span>
+        </span>
+        <div
+          v-if="typeof value.default=='object'"
+          v-for="v in value.default" :key="key" style="padding-left: 16px">
             <span class="config-line">
               <span class="config-list">- </span>
               <span
                 :class="isSpecial(v) ? 'config-value-special' : 'config-value-text'"
               >{{ v }}</span>
             </span>
-          </div>
-          <span
-            v-else
-            :class="isSpecial(resolveValue(value)) ? 'config-value-special' : 'config-value-text'"
-          >{{ resolveValue(value) }}</span>
         </div>
         <div
           v-if="expand[key]"
