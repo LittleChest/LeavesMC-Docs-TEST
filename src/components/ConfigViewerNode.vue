@@ -39,7 +39,8 @@ function isSpecial(value: string): boolean {
           <span class="config-value-text">: </span>
           <span :class="isSpecial(value.default)?'config-value-special':'config-value-text'">{{ value.default }}</span>
         </span>
-        <div v-if="expand[key]" class="custom-block info inline-block" style="width: 100%; padding: 16px">
+        <div v-if="expand[key]" class="custom-block info inline-block"
+             style="width: 100%; padding: 16px; white-space: pre-line">
           {{ value.description }}
         </div>
       </div>
@@ -52,7 +53,7 @@ function isSpecial(value: string): boolean {
       <p class="custom-block-title">
         {{ value.title === undefined ? value.type.toUpperCase() : value.title }}
       </p>
-      <p style="white-space: normal">{{ value.content }}</p>
+      <p style="white-space: pre-line">{{ value.content }}</p>
     </div>
   </div>
 </template>
