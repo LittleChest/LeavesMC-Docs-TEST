@@ -15,6 +15,38 @@ function isSpecial(value: string): boolean {
   }
   return !isNaN(Number(value));
 }
+
+const valueMap: string[] = [];
+
+function resolveValue(value: { default: string, vId?: number }): string {
+  if (value?.vId) {
+    return valueMap[value.vId];
+  }
+  value.vId = valueMap.length;
+  if (value.default.startsWith("$")) {
+    return valueMap[value.vId] = dynamicValue(value.default);
+  } else {
+    return valueMap[value.vId] = value.default;
+  }
+}
+
+function dynamicValue(value: string): string {
+  const args = value.split("$");
+  if (args[1] == "random") {
+    if (args[2] == "int") {
+      let min = -2147483648;
+      let max = 2147483647;
+      if (args[3]) {
+        min = Number(args[3]);
+      }
+      if (args[4]) {
+        max = Number(args[4]);
+      }
+      return String(Math.floor(Math.random() * (max - min) + min));
+    }
+  }
+  return value;
+}
 </script>
 
 <template>
@@ -32,13 +64,13 @@ function isSpecial(value: string): boolean {
         </span>
         <ConfigViewerNode :data="value" :padding="true" />
       </div>
-      <div v-else style="white-space: pre-warp" @click="expand[key] = !expand[key]">
+      <div v-else style="white-space: pre-wrap" @click="expand[key] = !expand[key]">
         <span class="line config-line" role="button">
           <span :class="hover[key] ? 'config-key-text-hover' : 'config-key-text'">{{ key }}</span>
           <span class="config-value-text">: </span>
           <span
-            :class="isSpecial(value.default) ? 'config-value-special' : 'config-value-text'"
-            v-html="value.default"
+            :class="isSpecial(resolveValue(value)) ? 'config-value-special' : 'config-value-text'"
+            v-html="resolveValue(value)"
           />
         </span>
         <div
