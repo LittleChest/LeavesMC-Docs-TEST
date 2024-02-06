@@ -6,11 +6,8 @@ import config from "../../../.vitepress/config.mjs";
 // noinspection JSUnusedGlobalSymbols
 export default {
   async load() {
-    const raw = yaml.parse(fs.readFileSync("./src/config-spec/leaves/en_US.yml", "utf-8"));
-    const md = await createMarkdownRenderer(
-      config.srcDir,
-      config.markdown
-    );
+    const raw = yaml.parse(fs.readFileSync("./src/config-spec/leaves/en.yml", "utf-8"));
+    const md = await createMarkdownRenderer(config.srcDir, config.markdown);
 
     function render(x: any): any {
       for (const key in x) {
@@ -27,4 +24,4 @@ export default {
 
     return render(raw);
   }
-}
+};

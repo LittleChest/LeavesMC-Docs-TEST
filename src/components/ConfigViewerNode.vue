@@ -32,15 +32,21 @@ function isSpecial(value: string): boolean {
         </span>
         <ConfigViewerNode :data="value" :padding="true" />
       </div>
-      <div v-else style="white-space: normal" @click="expand[key] = !expand[key]">
+      <div v-else style="white-space: pre-warp" @click="expand[key] = !expand[key]">
         <span class="line config-line" role="button">
           <span :class="hover[key] ? 'config-key-text-hover' : 'config-key-text'">{{ key }}</span>
           <span class="config-value-text">: </span>
-          <span :class="isSpecial(value.default)?'config-value-special':'config-value-text'">{{ value.default }}</span>
+          <span
+            :class="isSpecial(value.default) ? 'config-value-special' : 'config-value-text'"
+            v-html="value.default"
+          />
         </span>
-        <div v-if="expand[key]" class="custom-block info inline-block"
-             style="width: 100%; padding: 16px; white-space: normal"
-             v-html="value.description" />
+        <div
+          v-if="expand[key]"
+          class="custom-block info inline-block"
+          style="width: 100%; padding: 16px; white-space: normal"
+          v-html="value.description"
+        />
       </div>
     </div>
     <div
@@ -63,18 +69,18 @@ function isSpecial(value: string): boolean {
 }
 
 .config-key-text-hover {
-  --shiki-light: #6F42C1;
-  --shiki-dark: #B392F0;
+  --shiki-light: #6f42c1;
+  --shiki-dark: #b392f0;
 }
 
 .config-value-text {
-  --shiki-light: #032F62;
-  --shiki-dark: #9ECBFF;
+  --shiki-light: #032f62;
+  --shiki-dark: #9ecbff;
 }
 
 .config-value-special {
-  --shiki-light: #005CC5;
-  --shiki-dark: #79B8FF;
+  --shiki-light: #005cc5;
+  --shiki-dark: #79b8ff;
 }
 
 .inline-block {
