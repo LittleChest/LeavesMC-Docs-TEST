@@ -19,7 +19,7 @@ function isSpecial(value: string): boolean {
 const valueMap: string[] = [];
 
 function resolveValue(value: { default: string, vId?: number }): string {
-  if (value?.vId) {
+  if (value?.vId && valueMap[value.vId]) {
     return valueMap[value.vId];
   }
   value.vId = valueMap.length;
