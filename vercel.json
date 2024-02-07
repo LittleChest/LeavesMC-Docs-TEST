@@ -1,5 +1,6 @@
 {
   "buildCommand": "vitepress build",
+  "cleanUrls": true,
   "devCommand": "vitepress dev",
   "framework": "vitepress",
   "headers": [
@@ -13,5 +14,6 @@
       ]
     }
   ],
-  "outputDirectory": ".vitepress/dist"
+  "outputDirectory": ".vitepress/dist",
+  "trailingSlash": true
 }
