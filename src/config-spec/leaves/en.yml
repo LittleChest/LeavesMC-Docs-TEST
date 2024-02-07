@@ -55,7 +55,7 @@ settings:
 
         - `CARPET` Precise placement protocol version 2.
 
-        - `CARPET_FIX` Better precise placement protocol version 2 (requires [MasaGadget](https://github.com/plusls/MasaGadget/blob/main/README_EN.md)).
+        - `CARPET_FIX` Better precise placement protocol version 2 (requires [MasaGadget](https://modrinth.com/mod/masa-gadget)).
 
         - `LITEMATICA` Precise placement protocol version 3.
     appleskin-protocol:
