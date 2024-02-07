@@ -1,4 +1,4 @@
-# Fake Players
+# Fake Player
 
 Leaves provides fake player support similar to Carpet, with the command `/bot`.
 

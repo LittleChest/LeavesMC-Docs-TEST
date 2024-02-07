@@ -66,6 +66,21 @@ function sidebarLeaves(): DefaultTheme.SidebarItem[] {
           link: "migration"
         }
       ]
+    },
+    {
+      text: "Reference",
+      collapsed: false,
+      base: "/Leaves/reference/",
+      items: [
+        {
+          text: "Configuration",
+          link: "configuration"
+        },
+        {
+          text: "Fake Player",
+          link: "fakeplayer"
+        }
+      ]
     }
   ];
 }
