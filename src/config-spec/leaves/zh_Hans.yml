@@ -1,5 +1,3 @@
-# Configuration file for Leaves.
-
 config-version:
   default: "5"
   description: "Leaves 配置文件版本号。请勿修改！"
@@ -34,13 +32,13 @@ settings:
         决定哪些玩家将会被 [PCA](https://github.com/Nyan-Work/plusls-carpet-addition/blob/nyan-work/dev/README_ZH_CN.md) 数据同步。
 
         - `NOBODY` 所有玩家的数据都无法被同步。
-        
+
         - `BOT` 只有假人的数据可以被同步。
-        
+
         - `OPS` 假人的数据可以被同步，OP 可以同步所有玩家的数据。
-        
+
         - `OPS_AND_SELF` 假人的数据可以被同步，OP 可以同步所有玩家的数据，玩家可以同步自己的数据。
-        
+
         - `EVERYONE` 所有的玩家数据都可以被同步。
     bbor-protocol:
       default: "false"
@@ -97,34 +95,34 @@ settings:
           - "https://url.with.authlib-injector-yggdrasil"
         description: "指定 Yggdrasil API 地址。"
     disable-method-profiler:
-      default: 'true'
+      default: "true"
       description: "是否禁用方法检查器。这可能对调试造成影响，但不影响生产环境，并可以提升性能。"
     no-chat-sign:
-      default: 'true'
+      default: "true"
       description: "是否禁用聊天举报。"
     dont-respond-ping-before-start-fully:
-      default: 'true'
+      default: "true"
       description: "是否在服务器完全启动前**不**响应客户端请求。"
-    server-lang: 
-      default: 'en_us'
+    server-lang:
+      default: "en_us"
       description: |
         指定服务端的语言。
 
         - `en_us` 英语（美国）
 
         - `zh_cn` 简体中文（中国）
-    server-mod-name: 
+    server-mod-name:
       default: "Leaves"
       description: "指定服务端名称。"
     bstats-privacy-mode:
-      default: 'false'
+      default: "false"
       description: "是否开启 bStats 隐私模式。开启后，Leaves 将停止收集服务端版本、游玩人数、Java 版本。"
     force-minecraft-command:
-      default: 'true'
+      default: "true"
       description: "是否强制使用原版命令覆盖插件命令。"
   region:
-    format: 
-      default: 'ANVIL'
+    format:
+      default: "ANVIL"
       description: |
         指定区域文件格式。
 
@@ -132,37 +130,41 @@ settings:
 
         - `LINEAR` 使用 [Linear 文件格式](https://github.com/xymb-endcrystalme/LinearRegionFileFormatTools)（.linear）
     linear:
-      flush-frequency: 
-        default: '10'
-        description: '指定区域保存频率（秒）。'
+      flush-frequency:
+        default: "10"
+        description: "指定区域保存频率（秒）。"
       flush-max-threads:
-        default: '1'
-        description: '指定保存区域时使用的最大线程数。设置为 `-1` 时则使用全部线程。'
+        default: "1"
+        description: "指定保存区域时使用的最大线程数。设置为 `-1` 时则使用全部线程。"
       compression-level:
-        default: '1'
-        description: '区域文件的压缩等级。应填写 `1` - `22` 之间的数字。'
+        default: "1"
+        description: "区域文件的压缩等级。应填写 `1` - `22` 之间的数字。"
       crash-on-broken-symlink:
-        default: 'true'
-        description: '是否在读取区域文件失败时崩溃。'
+        default: "true"
+        description: "是否在读取区域文件失败时崩溃。"
   fix:
     vanilla-hopper:
-      default: 'false'
-      description: '使用激进的方案修复漏斗。@TODO'
+      default: "false"
+      description: |
+        使用激进的方案将漏斗还原为原版行为。
+        ::: warning
+        开启后可能会降低性能。
+        :::
   modify:
     fakeplayer:
       enable:
-        default: 'true'
-        description: '是否开启假人功能。'
+        default: "true"
+        description: "是否开启假人功能。"
       unable-fakeplayer-names:
-        default: 
+        default:
           - player-name
-        description: '禁止假人使用的名称列表。'
-      limit: 
-        default: '10'
-        description: '指定假人的最大数量。'
-      prefix: 
+        description: "禁止假人使用的名称列表。"
+      limit:
+        default: "10"
+        description: "指定假人的最大数量。"
+      prefix:
         default: "''"
-        description: '指定假人名称前缀。需要符合 Minecraft 用户名规范。'
-      suffix: 
+        description: "指定假人名称前缀。需要符合 Minecraft 用户名规范。"
+      suffix:
         default: "''"
-        description: '指定假人名称后缀。需要符合 Minecraft 用户名规范。'
+        description: "指定假人名称后缀。需要符合 Minecraft 用户名规范。"

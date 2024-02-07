@@ -1,0 +1,170 @@
+config-version:
+  default: "5"
+  description: "Leaves configuration file version. DO NOT modify!"
+settings:
+  protocol:
+    bladeren:
+      protocol:
+        default: "true"
+        description: "Whether to enable [Bladeren](https://github.com/LeavesMC/Bladeren/blob/master/README.md) support."
+      mspt-sync-protocol:
+        default: "false"
+        description: "Whether to enable MSPT synchronization."
+      mspt-sync-tick-interval:
+        default: "20"
+        description: "MSPT synchronization frequency (game ticks)."
+    syncmatica:
+      enable:
+        default: "false"
+        description: "Whether to enable [Syncmatica](https://modrinth.com/mod/syncmatica) support."
+      quota:
+        default: "false"
+        description: "Whether to limit projection file size."
+      quota-limit:
+        default: "40000000"
+        description: "Projection file size limit (bytes)."
+    pca-sync-protocol:
+      default: "false"
+      description: "Whether to enable [PCA](https://github.com/Nyan-Work/plusls-carpet-addition/blob/nyan-work/dev/README.md) data synchronization."
+    pca-sync-player-entity:
+      default: "OPS"
+      description: |
+        Determines which players will have their data synchronized by [PCA](https://github.com/Nyan-Work/plusls-carpet-addition/blob/nyan-work/dev/README.md).
+
+        - `NOBODY` No player data will be synchronized.
+
+        - `BOT` Only bot data will be synchronized.
+
+        - `OPS` Bot data will be synchronized, OPs can synchronize all player data.
+
+        - `OPS_AND_SELF` Bot data will be synchronized, OPs can synchronize all player data, players can synchronize their own data.
+
+        - `EVERYONE` All player data can be synchronized.
+    bbor-protocol:
+      default: "false"
+      description: "Whether to enable [BBOR](https://modrinth.com/mod/bbor) support."
+    jade-protocol:
+      default: "false"
+      description: "Whether to enable [Jade](https://modrinth.com/mod/jade) support."
+    alternative-block-placement:
+      default: "NONE"
+      description: |
+        Specifies the type of precise placement protocol.
+
+        - `NONE` No precise placement protocol support.
+
+        - `CARPET` Precise placement protocol version 2.
+
+        - `CARPET_FIX` Better precise placement protocol version 2 (requires [MasaGadget](https://github.com/plusls/MasaGadget/blob/main/README_EN.md)).
+
+        - `LITEMATICA` Precise placement protocol version 3.
+    appleskin-protocol:
+      default: "false"
+      description: "Whether to enable [AppleSkin](https://modrinth.com/mod/appleskin) support."
+    xaero-map-protocol:
+      default: "false"
+      description: "Whether to enable [Xaero's World Map](https://modrinth.com/mod/xaeros-world-map) support."
+    xaero-map-server-id:
+      default: $random$int
+      description: "Xaero's World Map uses this unique identifier to determine the server."
+    servux-protocol:
+      default: "false"
+      description: "Whether to enable [Servux](https://modrinth.com/mod/servux)."
+    leaves-carpet-support:
+      default: "false"
+      description: "Whether to enable [Carpet](https://modrinth.com/mod/carpet) support. The client may perceive this protocol to enable more features."
+  misc:
+    auto-update:
+      enable:
+        default: "false"
+        description: "Whether to enable automatic updates for Leaves."
+      time:
+        default:
+          - "'14:00'"
+          - "'2:00'"
+        description: "Time points for automatic updates of Leaves."
+    extra-yggdrasil-service:
+      enable:
+        default: "false"
+        description: "Whether to enable extra Yggdrasil authentication service."
+      login-protect:
+        default: "false"
+        description: "Whether to enable login protection, which disallows players with the same username but different UUIDs from joining."
+      urls:
+        default:
+          - "https://url.with.authlib-injector-yggdrasil"
+        description: "Specify the Yggdrasil API addresses."
+    disable-method-profiler:
+      default: "true"
+      description: "Whether to disable the method profiler. This may impact debugging but does not affect production environments and can improve performance."
+    no-chat-sign:
+      default: "true"
+      description: "Whether to disable chat reporting."
+    dont-respond-ping-before-start-fully:
+      default: "true"
+      description: "Whether to **not** respond to client requests before the server is fully started."
+    server-lang:
+      default: "en_us"
+      description: |
+        Specify the server language.
+
+        - `en_us` English (US)
+
+        - `zh_cn` Simplified Chinese (China)
+    server-mod-name:
+      default: "Leaves"
+      description: "Specify the server name."
+    bstats-privacy-mode:
+      default: "false"
+      description: "Whether to enable bStats privacy mode. When enabled, Leaves will stop collecting server version, player count, and Java version."
+    force-minecraft-command:
+      default: "true"
+      description: "Whether to force the use of vanilla commands over plugin commands."
+  region:
+    format:
+      default: "ANVIL"
+      description: |
+        Specify the region file format.
+
+        - `ANVIL` Use [Anvil file format](https://minecraft.wiki/w/Anvil_file_format) (.mca).
+
+        - `LINEAR` Use [Linear file format](https://github.com/xymb-endcrystalme/LinearRegionFileFormatTools) (.linear).
+    linear:
+      flush-frequency:
+        default: "10"
+        description: "Specify the region save frequency (seconds)."
+      flush-max-threads:
+        default: "1"
+        description: "Specify the maximum number of threads to use when saving regions. Set to `-1` to use all threads."
+      compression-level:
+        default: "1"
+        description: "Compression level for region files. Should be a number between `1` and `22`."
+      crash-on-broken-symlink:
+        default: "true"
+        description: "Whether to crash when reading region files fails."
+  fix:
+    vanilla-hopper:
+      default: "false"
+      description: |
+        Use an aggressive approach to restore hoppers to their vanilla behavior.
+        ::: warning
+        Enabling this may reduce performance.
+        :::
+  modify:
+    fakeplayer:
+      enable:
+        default: "true"
+        description: "Whether to enable fake player functionality."
+      unable-fakeplayer-names:
+        default:
+          - player-name
+        description: "List of names that fake players are not allowed to use."
+      limit:
+        default: "10"
+        description: "Specify the maximum number of fake players."
+      prefix:
+        default: "''"
+        description: "Specify the prefix for fake player names. Must comply with Minecraft username rules."
+      suffix:
+        default: "''"
+        description: "Specify the suffix for fake player names. Must comply with Minecraft username rules."

@@ -1,14 +1,14 @@
-# 配置
+# Configuration
 
 <!--suppress HtmlUnknownAttribute -->
 <script setup>
 import ConfigViewer from "../../../components/ConfigViewer.vue";
-import { data } from "../../../config-spec/leaves/zhHans.data.mts";
+import { data } from "../../../config-spec/leaves/en.data.mts";
 </script>
 
 ::: tip
 
-点击配置行以显示更多信息。
+Click on the configuration line to display more information.
 
 :::
 
