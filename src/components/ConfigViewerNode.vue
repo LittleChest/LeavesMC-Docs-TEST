@@ -18,15 +18,15 @@ function isSpecial(value: string): boolean {
 
 const valueMap: string[] = [];
 
-function resolveValue(value: { default: string, vId?: number }): string {
+function resolveValue(value: { default: string; vId?: number }): string {
   if (value?.vId && valueMap[value.vId]) {
     return valueMap[value.vId];
   }
   value.vId = valueMap.length;
   if (value.default.startsWith("$")) {
-    return valueMap[value.vId] = dynamicValue(value.default);
+    return (valueMap[value.vId] = dynamicValue(value.default));
   } else {
-    return valueMap[value.vId] = value.default;
+    return (valueMap[value.vId] = value.default);
   }
 }
 
@@ -57,7 +57,8 @@ function dynamicValue(value: string): string {
       @mouseleave="hover[key] = false"
       :style="{ paddingLeft: padding ? '8px' : '0' }"
     >
-      <div v-if="value['default'] === undefined">
+      <!-- @FIXME: Temp UrlHash -->
+      <div v-if="value['default'] === undefined" :id="key">
         <span class="line config-line" role="button">
           <span :class="hover[key] ? 'config-key-text-hover' : 'config-key-text'">{{ key }}</span>
           <span class="config-value-text">:</span>
@@ -69,19 +70,23 @@ function dynamicValue(value: string): string {
           <span :class="hover[key] ? 'config-key-text-hover' : 'config-key-text'">{{ key }}</span>
           <span class="config-value-text">: </span>
           <span
-            v-if="typeof value.default!='object'"
+            v-if="typeof value.default != 'object'"
             :class="isSpecial(resolveValue(value)) ? 'config-value-special' : 'config-value-text'"
-          >{{ resolveValue(value) }}</span>
+            >{{ resolveValue(value) }}</span
+          >
         </span>
         <div
-          v-if="typeof value.default=='object'"
-          v-for="v in value.default" :key="key" style="padding-left: 16px">
-            <span class="config-line">
-              <span class="config-list">- </span>
-              <span
-                :class="isSpecial(v) ? 'config-value-special' : 'config-value-text'"
-              >{{ v }}</span>
-            </span>
+          v-if="typeof value.default == 'object'"
+          v-for="v in value.default"
+          :key="key"
+          style="padding-left: 16px"
+        >
+          <span class="config-line">
+            <span class="config-list">- </span>
+            <span :class="isSpecial(v) ? 'config-value-special' : 'config-value-text'">{{
+              v
+            }}</span>
+          </span>
         </div>
         <div
           v-if="expand[key]"
@@ -126,8 +131,8 @@ function dynamicValue(value: string): string {
 }
 
 .config-list {
-  --shiki-light: #24292E;
-  --shiki-dark: #E1E4E8;
+  --shiki-light: #24292e;
+  --shiki-dark: #e1e4e8;
 }
 
 .inline-block {
