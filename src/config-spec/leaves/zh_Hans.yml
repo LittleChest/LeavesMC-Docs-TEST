@@ -283,7 +283,7 @@ settings:
       description: |
         是否在创造模式下飞行时禁用碰撞箱。
         ::: tip
-        此功能需要启用 `[settings.protocol.leaves-carpet-support](#leaves-carpet-support)`。
+        此功能需要启用 `settings.protocol.leaves-carpet-support`。
         :::
     shave-snow-layers:
       default: "true"
@@ -299,7 +299,7 @@ settings:
       description: |
         是否允许玩家在熔岩中使用激流。
         ::: tip
-        此功能需要启用 `[settings.protocol.bladeren.protocol](#bladeren)`。
+        此功能需要启用 `settings.protocol.bladeren.protocol`。
     no-block-update-command:
       default: "false"
       description: "是否开启 `/leaves blockupdate` 命令。"
@@ -321,7 +321,7 @@ settings:
       description: |
         是否禁用“过于昂贵！”限制。
         ::: tip
-        要正确显示真实的经验消耗等级，需要启用 `[settings.protocol.leaves-carpet-support](#leaves-carpet-support) 并安装 [Plusls Carpet Addition](https://github.com/Nyan-Work/plusls-carpet-addition/blob/nyan-work/dev/README_ZH_CN.md)。
+        要正确显示真实的经验消耗等级，需要启用 `settings.protocol.leaves-carpet-support` 并安装 [Plusls Carpet Addition](https://github.com/Nyan-Work/plusls-carpet-addition/blob/nyan-work/dev/README_ZH_CN.md)。
     bow-infinity-fix:
       default: "false"
       description: "是否在物品栏中无箭矢时仍可使用拥有无限魔咒的弓，就像自身处于创造模式一样。"
