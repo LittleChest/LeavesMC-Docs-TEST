@@ -25,11 +25,11 @@ settings:
         description: "投影文件体积上限（字节）。"
     pca-sync-protocol:
       default: "false"
-      description: "是否开启 [PCA](https://github.com/Nyan-Work/plusls-carpet-addition/blob/nyan-work/dev/README_ZH_CN.md) 数据同步。"
+      description: "是否开启 [Plusls Carpet Addition](https://github.com/Nyan-Work/plusls-carpet-addition/blob/nyan-work/dev/README_ZH_CN.md) 数据同步。"
     pca-sync-player-entity:
       default: "OPS"
       description: |
-        决定哪些玩家将会被 [PCA](https://github.com/Nyan-Work/plusls-carpet-addition/blob/nyan-work/dev/README_ZH_CN.md) 数据同步。
+        决定哪些玩家将会被 [Plusls Carpet Addition](https://github.com/Nyan-Work/plusls-carpet-addition/blob/nyan-work/dev/README_ZH_CN.md) 数据同步。
         - `NOBODY` 所有玩家的数据都无法被同步。
         - `BOT` 只有假人的数据可以被同步。
         - `OPS` 假人的数据可以被同步，OP 可以同步所有玩家的数据。
@@ -68,7 +68,11 @@ settings:
     auto-update:
       enable:
         default: "false"
-        description: "是否开启 Leaves 自动更新。"
+        description: |
+          是否开启 Leaves 自动更新。
+          ::: tip
+          更新将在服务器重新启动后安装。
+          :::
       time:
         default:
           - "'14:00'"
@@ -209,7 +213,7 @@ settings:
       description: "是否允许鸡蛋和雪球击退玩家。"
     flatten-triangular-distribution:
       default: "false"
-      description: "是否将随机数发生器改为平均分布。这将使边缘事件更容易发生。"
+      description: "是否将随机发生器改为平均分布。这将使边缘事件更容易发生。"
     player-operation-limiter:
       default: "false"
       description: "是否限制玩家行为速度。开启后每个游戏刻只能秒破 1 个方块或放置 2 个方块。"
@@ -252,7 +256,7 @@ settings:
       description: "是否修复玩家从下界返回主世界时传送门位置异常的问题。"
     use-vanilla-random:
       default: "false"
-      description: "是否使用原版随机数。开启后将略微降低性能，但可以被 RNG 破解。"
+      description: "是否使用原版随机数。开启后将略微降低性能，但可以破解随机发生器。"
     fix-update-suppression-crash:
       default: "true"
       description: "是否修复由于更新抑制导致的崩溃。"
@@ -264,7 +268,7 @@ settings:
       description: "是否禁用使用物品时距离检测。"
     no-feather-falling-trample:
       default: "false"
-      description: "是否在靴子附魔[摔落缓冲](https://zh.minecraft.wiki/w/%E6%91%94%E8%90%BD%E7%BC%93%E5%86%B2)时不会导致耕地退化。"
+      description: "是否在靴子拥有[摔落缓冲](https://zh.minecraft.wiki/w/%E6%91%94%E8%90%BD%E7%BC%93%E5%86%B2)魔咒时不会导致耕地退化。"
     shared-villager-discounts:
       default: "false"
       description: "是否允许多个玩家玩家共享同一村民折扣。"
@@ -279,4 +283,245 @@ settings:
       description: |
         是否在创造模式下飞行时禁用碰撞箱。
         ::: tip
-        此功能需要启用 `settings.protocol.leaves-carpet-support`。
+        此功能需要启用 `[settings.protocol.leaves-carpet-support](#leaves-carpet-support)`。
+        :::
+    shave-snow-layers:
+      default: "true"
+      description: "是否在使用锹破坏雪时减少雪层而不是掉落雪球。"
+    ignore-lc:
+      default: "false"
+      description: "是否允许生物忽略最高方块高度（[lc 值](https://zh.minecraft.wiki/w/%E7%94%9F%E6%88%90#cite_note-3)）生成。"
+    disable-packet-limit:
+      default: "false"
+      description: "是否禁用发包限制。"
+    lava-riptide:
+      default: "false"
+      description: |
+        是否允许玩家在熔岩中使用激流。
+        ::: tip
+        此功能需要启用 `[settings.protocol.bladeren.protocol](#bladeren)`。
+    no-block-update-command:
+      default: "false"
+      description: "是否开启 `/leaves blockupdate` 命令。"
+    no-tnt-place-update:
+      default: "false"
+      description: "是否在放置 TNT 时不进行方块更新。"
+    raider-die-skip-self-raid-check:
+      default: "false"
+      description: |
+        是否跳过部分袭击检测。
+        ::: warning
+        开启后会大幅降低服务器的性能。
+        :::
+    container-passthrough:
+      default: "false"
+      description: "是否在主副手无物品时按下使用键直接打开支撑告示牌的箱子。"
+    avoid-anvil-too-expensive:
+      default: "false"
+      description: |
+        是否禁用“过于昂贵！”限制。
+        ::: tip
+        要正确显示真实的经验消耗等级，需要启用 `[settings.protocol.leaves-carpet-support](#leaves-carpet-support) 并安装 [Plusls Carpet Addition](https://github.com/Nyan-Work/plusls-carpet-addition/blob/nyan-work/dev/README_ZH_CN.md)。
+    bow-infinity-fix:
+      default: "false"
+      description: "是否在物品栏中无箭矢时仍可使用拥有无限魔咒的弓，就像自身处于创造模式一样。"
+    hopper-counter:
+      default: "false"
+      description: "是否启用[漏斗计数器](https://github.com/gnembon/quick-carpet/blob/master/README.md#hoppercounters)与对应的命令 `/leaves counter`。"
+    spider-jockeys-drop-gapples:
+      default: "-1.0"
+      description: "当蜘蛛骑士被击杀时掉落附魔金苹果的概率。设置为 `-1` 以禁用此功能。"
+    # @FIXME 这是什么？
+    renewable-deepslate:
+      default: "false"
+      description: ""
+    renewable-sponges:
+      default: "false"
+      description: ""
+    renewable-coral:
+      default: "FALSE"
+      description: ""
+    fast-resume:
+      default: "false"
+      description: ""
+    force-peaceful-mode:
+      default: "-1"
+      description: ""
+    minecraft-old:
+      shears-in-dispenser-can-zero-amount:
+        default: "false"
+        description: "是否允许剪刀在发射器内可以被使用到负耐久且不损坏。"
+      instant-block-updater-reintroduced:
+        default: "false"
+        description: "是否重新引入 1.19 前的瞬时方块更新机制。"
+      armor-stand-cant-kill-by-mob-projectile:
+        default: "false"
+        description: "是否**不**允许来自生物的弹射物破坏盔甲架。"
+      cce-update-suppression:
+        default: "false"
+        description: |
+          是否允许利用 ClassCastException 进行更新抑制。
+          ::: tip
+          有关更详细的说明，请参阅[关于强转抑制器的笔记](https://www.bilibili.com/read/cv24323749/)。
+          :::
+      villager-infinite-discounts:
+        default: "false"
+        description: "是否允许村民多次感染并治愈的折扣翻倍。"
+      copper-bulb-1gt-delay:
+        default: "false"
+        description: "是否使铜灯在红石信号变化时延迟 1 游戏刻切换状态。"
+      crafter-1gt-delay:
+        default: "false"
+        description: "是否将合成器输出物品的频率降低为 1 游戏刻。"
+      redstone-wire-dont-connect-if-on-trapdoor:
+        default: "false"
+        description: "是否在活板门开启时阻止它四周的红石线连接活板门上侧的红石线。"
+      mending-compatibility-infinity:
+        default: "false"
+        description: "是否使经验修补与无限不再互斥。"
+      zero-tick-plants:
+        default: "false"
+        description: "是否允许[零刻作物催熟技术](https://zh.minecraft.wiki/w/Tutorial:%E9%9B%B6%E5%88%BB%E4%BD%9C%E7%89%A9%E5%82%AC%E7%86%9F%E6%8A%80%E6%9C%AF)。"
+      rng-fishing:
+        default: "false"
+        description: "是否允许破解钓鱼随机发生器。"
+      protection-stacking:
+        default: "false"
+        description: "是否使保护类魔咒不再相互排斥。"
+  performance:
+    remove:
+      tick-guard-lambda:
+        default: "true"
+        description: "是否删除 `Lambda`。"
+      inventory-contains-iterators:
+        default: "true"
+        description: "是否删除物品栏中的 `迭代器`。"
+      get-nearby-players-streams:
+        default: "true"
+        description: "是否删除获取附近的玩家数据中的 `流`。"
+      range-check-streams-and-iterators:
+        default: "true"
+        description: "是否删除距离检查中的 `流` 和 `迭代器`。"
+      damage-lambda:
+        default: "true"
+        description: "是否删除伤害检测中的 `Lambda`。"
+    optimized-dragon-respawn:
+      default: "false"
+      description: |
+        是否优化末影龙战斗。
+        ::: warning
+        此功能与原版表现不完全一致。
+        :::
+    dont-send-useless-entity-packets:
+      default: "true"
+      description: |
+        是否减少发送无用实体包。
+        ::: warning
+        这可能会破坏利用这些无用实体包的模组。
+        :::
+    optimize-entity-coordinate-key:
+      default: "true"
+      description: "是否直接使用 blockPosition 结构中已提供的已转换/舍入的数据。"
+    enable-suffocation-optimization:
+      default: "true"
+      description: "是否将窒息检测频率提高为 20 游戏刻。玩家很难（但不是不可能）注意到这一变化。"
+    strip-raytracing-for-entity:
+      default: "true"
+      description: "是否优化 rayTrace 方法。"
+    check-spooky-season-once-an-hour:
+      default: "true"
+      description: "是否将万圣节检测频率提高至 1 小时。"
+    optimize-chunk-ticking:
+      default: "true"
+      description: |
+        是否优化这些区块刻：
+        - 闪电
+        - 冰和雪的生成
+    skip-poi-find-in-vehicle:
+      default: "true"
+      description: "是否跳过位于载具内的村民的兴趣点计算。"
+    entity-target-find-optimization:
+      default: "true"
+      description: "是否在实体找不到目标时直接停止寻找。"
+    use-more-thread-unsafe-random:
+      default: "true"
+      description: "是否使用更多线程不安全的随机发生器，它们虽然不安全，但是运行更快。"
+    inactive-goal-selector-disable:
+      default: "false"
+      description: "是否限制不活跃实体的目标查找器的运行。"
+    reduce-entity-allocations:
+      default: "true"
+      description: "是否减少对实体的分配。"
+    cache-climb-check:
+      default: "true"
+      description: "是否缓存攀爬检查结果。"
+    biome-temperatures-use-aging-cache:
+      default: "true"
+      description: "是否优化生态群落温度缓存。"
+    reduce-entity-fluid-lookup:
+      default: "true"
+      description: "是否在实体附近没有流体时不进行低效率的流体查找。"
+    reduce-chuck-load-and-lookup:
+      default: "true"
+      description: "是否减少不必要的区块查找和加载。"
+    improve-fluid-direction-caching:
+      default: "true"
+      description: "是否重新实现 FluidTypeFlowing 的缓存系统，并使其执行效率更高。"
+    cache-ignite-odds:
+      default: "true"
+      description: "是否开启对火焰蔓延检测中对方块燃烧概率的短暂缓存。"
+    faster-chunk-serialization:
+      default: "true"
+      description: "是否使用 [Lithium](https://github.com/CaffeineMC/lithium-fabric) 快速区块保存序列化。"
+    optimize-world-generation-and-block-access:
+      default: "true"
+      description: "是否在世界生成时优化区块和方块获取流程。"
+    cache-world-generator-sea-level:
+      default: "true"
+      description: "是否在世界生成时缓存海平面高度。"
+    skip-secondary-POI-sensor-if-absent:
+      default: "true"
+      description: "是否跳过寻找不存在的次要兴趣点。"
+    cache-CubeVoxelShape-shape-array:
+      default: "true"
+      description: "是否缓存 CubeVoxelShape。"
+    store-mob-counts-in-array:
+      default: "true"
+      description: "是否在生物生成上限计算时使用数组。"
+    cache-BlockStatePairKey-hash:
+      default: "true"
+      description: "是否缓存 BlockStatePairKey 的哈希值计算。"
+    optimize-noise-generation:
+      default: "false"
+      description: |
+        是否使用 [C^2M-Engine](https://github.com/RelativityMC/C2ME-fabric) 的世界生成噪声优化。
+        ::: warning
+        这是一个实验性功能。
+        :::
+    optimize-sun-burn-tick:
+      default: "true"
+      description: "是否优化实体的阳光照射检测。"
+    use-optimized-collection:
+      default: "true"
+      description: "是否在一些调用集合类的代码执行片段中使用优化后的集合类替代原版的集合类。"
+    optimized-CubePointRange:
+      default: "true"
+      description: "是否优化 CubePointRange。"
+    check-frozen-ticks-before-landing-block:
+      default: "true"
+      description: "是否在尝试生成冰的时候优先检查游戏刻而不是先检查方块是否为空气。"
+    cache-ominous-banner-item:
+      default: "true"
+      description: "是否缓存灾厄旗帜的 NBT 数据。"
+    skip-entity-move-if-movement-is-zero:
+      default: "true"
+      description: "是否跳过完全没有移动的实体的位移计算。"
+    skip-cloning-advancement-criteria:
+      default: "false"
+      description: "是否跳过进度判断的复制。"
+    skip-negligible-planar-movement-multiplication:
+      default: "true"
+      description: "是否跳过玩家移动中不必要的乘法计算。"
+    fix-villagers-dont-release-memory:
+      default: "false"
+      description: "是否修复村民不释放内存的问题。"

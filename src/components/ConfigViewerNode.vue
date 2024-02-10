@@ -63,7 +63,7 @@ function dynamicValue(value: string): string {
           <span :class="hover[key] ? 'config-key-text-hover' : 'config-key-text'">{{ key }}</span>
           <span class="config-value-text">:</span>
         </span>
-        <ConfigViewerNode :data="value" :padding="true" />
+        <ConfigViewerNode :data="value" :padding="true" :id="key" />
       </div>
       <div v-else style="white-space: pre-wrap" @click="expand[key] = !expand[key]">
         <span class="line config-line" role="button">
