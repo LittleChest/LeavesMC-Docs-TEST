@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
 let hover = ref({});
 let expand = ref({});
 
 const props = defineProps({
   data: Object,
+  parent: String,
   padding: Boolean
 });
 
@@ -47,6 +48,11 @@ function dynamicValue(value: string): string {
   }
   return value;
 }
+
+onMounted(() => {
+  const dist = window.location.hash.replace("#", ".") as string;
+  expand.value[dist.replace(props.parent, "").split(".")[1]] = true;
+});
 </script>
 
 <template>
@@ -55,17 +61,22 @@ function dynamicValue(value: string): string {
       v-if="key !== 'inline-block'"
       @mouseover="hover[key] = true"
       @mouseleave="hover[key] = false"
+      @click="console.log(`${parent} ${JSON.stringify(expand)}`)"
       :style="{ paddingLeft: padding ? '8px' : '0' }"
     >
-      <!-- @FIXME: Temp UrlHash -->
-      <div v-if="value['default'] === undefined" :id="key">
+      <div v-if="value['default'] === undefined" :id="`${parent}.${key}`.slice(1)">
         <span class="line config-line" role="button">
           <span :class="hover[key] ? 'config-key-text-hover' : 'config-key-text'">{{ key }}</span>
           <span class="config-value-text">:</span>
         </span>
-        <ConfigViewerNode :data="value" :padding="true" />
+        <ConfigViewerNode :data="value" :padding="true" :parent="`${parent}.${key}`" />
       </div>
-      <div v-else style="white-space: pre-wrap" :id="key" @click="expand[key] = !expand[key]">
+      <div
+        v-else
+        style="white-space: pre-wrap"
+        :id="`${parent}.${key}`.slice(1)"
+        @click="expand[key] = !expand[key]"
+      >
         <span class="line config-line" role="button">
           <span :class="hover[key] ? 'config-key-text-hover' : 'config-key-text'">{{ key }}</span>
           <span class="config-value-text">: </span>

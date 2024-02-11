@@ -13,7 +13,7 @@ const props = defineProps({
     <pre
       class="shiki shiki-themes github-light github-dark vp-code"
     ><code class="config-code-block"><ConfigViewerNode
-      :data="data" :padding="false" /></code></pre>
+      :data="data" :padding="false" parent="" /></code></pre>
   </div>
 </template>
 
