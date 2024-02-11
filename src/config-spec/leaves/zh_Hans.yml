@@ -350,7 +350,7 @@ settings:
     minecraft-old:
       shears-in-dispenser-can-zero-amount:
         default: "false"
-        description: "是否允许剪刀在发射器内可以被使用到负耐久且不损坏。"
+        description: "是否允许剪刀在发射器内被使用到负耐久且不会损坏。"
       instant-block-updater-reintroduced:
         default: "false"
         description: "是否重新引入 1.19 前的瞬时方块更新机制。"
