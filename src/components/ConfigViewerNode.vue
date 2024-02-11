@@ -113,21 +113,25 @@ function dynamicValue(value: string): string {
 .config-key-text {
   --shiki-light: #22863a;
   --shiki-dark: #85e89d;
+  transition: color 0.2s;
 }
 
 .config-key-text-hover {
   --shiki-light: #6f42c1;
   --shiki-dark: #b392f0;
+  transition: color 0.2s;
 }
 
 .config-value-text {
   --shiki-light: #032f62;
   --shiki-dark: #9ecbff;
+  transition: color 0.2s;
 }
 
 .config-value-special {
   --shiki-light: #005cc5;
   --shiki-dark: #79b8ff;
+  transition: color 0.2s;
 }
 
 .config-list {
