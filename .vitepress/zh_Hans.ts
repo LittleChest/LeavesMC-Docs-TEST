@@ -13,7 +13,7 @@ export const zh_Hans = defineConfig({
     },
 
     editLink: {
-      pattern: "https://github.com/LeavesMC/Document/edit/main/docs/:path",
+      pattern: "https://github.com/LeavesMC/Document/edit/main/src/:path",
       text: "在 GitHub 上编辑此页面"
     },
 

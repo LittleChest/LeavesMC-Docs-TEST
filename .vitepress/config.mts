@@ -5,13 +5,6 @@ import { zh_Hans, search as zhHansSearch } from "./zh_Hans";
 export default defineConfigWithTheme({
   srcDir: "./src",
   lastUpdated: true,
-  rewrites: {
-    "index.md": "index.md",
-    ":file(.*)/index.md": ":file/index.md",
-    ":file(.*).md": ":file/index.md"
-  },
-  // @TODO
-  ignoreDeadLinks: true,
 
   head: [["link", { rel: "icon", href: "/favicon.ico" }]],
 

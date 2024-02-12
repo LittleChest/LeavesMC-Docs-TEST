@@ -13,7 +13,7 @@ export const en = defineConfig({
     },
 
     editLink: {
-      pattern: "https://github.com/LeavesMC/Document/edit/main/docs/:path"
+      pattern: "https://github.com/LeavesMC/Document/edit/main/src/:path"
     },
 
     footer: {
