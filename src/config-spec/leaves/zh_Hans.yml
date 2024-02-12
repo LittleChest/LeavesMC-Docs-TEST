@@ -299,7 +299,7 @@ settings:
       description: |
         是否允许玩家在熔岩中使用激流。
         ::: tip
-        此功能需要启用 `settings.protocol.bladeren.protocol`。
+        此功能需要启用 [`settings.protocol.bladeren.protocol`](#settings.protocol.bladeren.protocol)。
     no-block-update-command:
       default: "false"
       description: "是否开启 `/leaves blockupdate` 命令。"
@@ -321,7 +321,7 @@ settings:
       description: |
         是否禁用“过于昂贵！”限制。
         ::: tip
-        要正确显示真实的经验消耗等级，需要启用 `settings.protocol.leaves-carpet-support` 并安装 [Plusls Carpet Addition](https://github.com/Nyan-Work/plusls-carpet-addition/blob/nyan-work/dev/README_ZH_CN.md)。
+        要正确显示真实的经验消耗等级，需要启用 [`settings.protocol.leaves-carpet-support`](#settings.protocol.leaves-carpet-support) 并安装 [Plusls Carpet Addition](https://github.com/Nyan-Work/plusls-carpet-addition/blob/nyan-work/dev/README_ZH_CN.md)。
     bow-infinity-fix:
       default: "false"
       description: "是否在物品栏中无箭矢时仍可使用拥有无限魔咒的弓，就像自身处于创造模式一样。"
@@ -475,7 +475,7 @@ settings:
       description: "是否开启对火焰蔓延检测中对方块燃烧概率的短暂缓存。"
     faster-chunk-serialization:
       default: "true"
-      description: "是否使用 [Lithium](https://github.com/CaffeineMC/lithium-fabric) 快速区块保存序列化。"
+      description: "是否使用 [Lithium](https://modrinth.com/mod/lithium) 快速区块保存序列化。"
     optimize-world-generation-and-block-access:
       default: "true"
       description: "是否在世界生成时优化区块和方块获取流程。"
@@ -497,7 +497,7 @@ settings:
     optimize-noise-generation:
       default: "false"
       description: |
-        是否使用 [C^2M-Engine](https://github.com/RelativityMC/C2ME-fabric) 的世界生成噪声优化。
+        是否使用 [Concurrent Chunk Management Engine](https://modrinth.com/mod/c2me-fabric) 的世界生成噪声优化。
         ::: warning
         这是一个实验性功能。
         :::

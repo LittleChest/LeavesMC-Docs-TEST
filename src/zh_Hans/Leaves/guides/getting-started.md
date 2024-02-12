@@ -25,5 +25,5 @@ Leaves 在我们的[网站的下载页面](https://leavesmc.top/downloads/leaves
 
 还可以使用[启动脚本生成器](https://docs.papermc.io/misc/tools/start-script-gen)为你的服务器生成启动脚本。
 
-要配置服务端，请查看 [Leaves 配置](../configuration)
+要配置服务端，请查看 [Leaves 配置](../reference/configuration)
 和 [Paper 配置](https://docs.papermc.io/paper/reference/configuration)。

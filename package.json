@@ -1,7 +1,7 @@
 {
   "name": "docs",
   "version": "0.0.1",
-  "description": "Documentation for all projects made by The LeavesMC team.",
+  "description": "Documentation for all projects made by the LeavesMC team.",
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",

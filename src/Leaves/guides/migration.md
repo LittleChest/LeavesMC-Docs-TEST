@@ -26,7 +26,7 @@ Leaves retains full compatibility with all Paper plugins, allowing a seamless tr
 Your new Leaves server will still
 use [`bukkit.yml`](https://docs.papermc.io/paper/reference/configuration/bukkit-configuration.mdx), [`spigot.yml`](https://docs.papermc.io/paper/reference/configuration/spigot-configuration.mdx), [`paper-global.yml`](https://docs.papermc.io/paper/reference/configuration/global-configuration.mdx)
 and [`paper-world-defaults.yml`](https://docs.papermc.io/paper/reference/configuration/world-configuration.mdx).  
-New configuration options can be found in [`leaves.yml`](../configuration).
+New configuration options can be found in [`leaves.yml`](../reference/configuration).
 
 :::
 

@@ -3,7 +3,7 @@ import { defineConfig, type DefaultTheme } from "vitepress";
 export const en = defineConfig({
   lang: "en",
   title: "LeavesMC Documentation",
-  description: "Documentation for all projects made by The LeavesMC team.",
+  description: "Documentation for all projects made by the LeavesMC team.",
 
   themeConfig: {
     nav: nav(),

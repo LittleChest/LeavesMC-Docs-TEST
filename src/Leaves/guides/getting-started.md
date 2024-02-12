@@ -28,5 +28,5 @@ For more advanced Java tuning, see [Aikar's Flags](https://docs.papermc.io/paper
 Use [Startup Script Generator](https://docs.papermc.io/misc/tools/start-script-gen) to generate a startup script for
 your server.
 
-To configure your server, see [Leaves Configuration](../configuration)
+To configure your server, see [Leaves Configuration](../reference/configuration)
 and [Paper Configuration](https://docs.papermc.io/paper/reference/configuration).

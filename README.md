@@ -1,6 +1,6 @@
 # Documentation
 
-Documentation for all projects made by The LeavesMC team.
+Documentation for all projects made by the LeavesMC team.
 
 ## Getting Started
 

@@ -25,7 +25,7 @@ Leaves 保留了与所有 Paper 插件的完全兼容性，实现无缝过渡。
 
 你的新 Leaves
 服务器仍将使用 [`bukkit.yml`](https://docs.papermc.io/paper/reference/configuration/bukkit-configuration.mdx)、[`spigot.yml`](https://docs.papermc.io/paper/reference/configuration/spigot-configuration.mdx)、[`paper-global.yml`](https://docs.papermc.io/paper/reference/configuration/global-configuration.mdx) 和 [`paper-world-defaults.yml`](https://docs.papermc.io/paper/reference/configuration/world-configuration.mdx)。
-新的配置选项可以在 [`leaves.yml`](../configuration) 中找到。
+新的配置选项可以在 [`leaves.yml`](../reference/configuration) 中找到。
 
 :::
 

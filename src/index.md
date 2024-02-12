@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "LeavesMC"
   text: "Documentation"
-  tagline: "Documentation for all projects made by The LeavesMC team."
+  tagline: "Documentation for all projects made by the LeavesMC team."
   image:
     src: /logo.svg
     alt: LeavesMC
