@@ -283,7 +283,7 @@ settings:
       description: |
         是否在创造模式下飞行时禁用碰撞箱。
         ::: tip
-        此功能需要启用 `settings.protocol.leaves-carpet-support`。
+        此功能需要启用 [`settings.protocol.leaves-carpet-support`](#settings.protocol.leaves-carpet-support)。
         :::
     shave-snow-layers:
       default: "true"
